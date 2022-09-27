@@ -38,9 +38,9 @@ Class Cart
 
     public function add($id)
     {
-
+        // On lance une session
         $session=$this->requestStack->getSession();
-
+        // On récupère les informations dans la session cart
         $cart=$session->get('cart',[]);
 
         if(!empty($cart[$id])){
@@ -53,7 +53,7 @@ Class Cart
         }
 
 
-
+        // On envoie les information qui sont dans la session
         $session->set('cart',$cart);
 
     }
